@@ -25,6 +25,16 @@
                 <th>Flatno</th>
                 <td>{{ entity.flatNo }}</td>
             </tr>
+            <tr>
+                <th>Persons:</th>
+                <td>
+                    {%for person in entity.persons%}
+                        <ul> <li> {{person.firstName}} {{person.lastName}}
+                            </li>
+                        </ul>
+            {%endfor%}
+                </td>
+            </tr>
         </tbody>
     </table>
 

@@ -28,6 +28,13 @@
                     <li>
                         <a href="{{ path('_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
+                    <li>
+                        <form action="{{ path('_delete', { 'id': entity.id }) }}" method="post">
+    <input type="hidden" name="_method" value="DELETE" />
+   {{ form_widget(deleteForms[entity.id]) }}
+</form>
+                    </li>
+
                 </ul>
                 </td>
             </tr>

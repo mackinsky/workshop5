@@ -21,6 +21,43 @@
                 <th>Description</th>
                 <td>{{ entity.description }}</td>
             </tr>
+            <tr>
+                <th>Emails:</th>
+                <td>
+                    {%for email in entity.emails%}
+                        <ul> 
+                            <li> 
+                                {{email.emailAddress}} <a href="{{ path('email_edit', { 'id':email.id }) }}">Edit</a>
+                            </li>
+                        </ul>
+            {%endfor%}
+                </td>
+            </tr>
+            <tr>
+                <th>Telephones:</th>
+                <td>
+                    {%for telephone in entity.telephones%} 
+                        <ul> <li> {{telephone.phoneNo}} <a href="{{ path('telephone_edit', { 'id':telephone.id }) }}">Edit</a>
+                            </li>
+                        </ul>
+            {%endfor%}
+                </td>
+            </tr>
+            <tr>
+                <th>Address:</th>
+                <td>
+                        {% if entity.address is null %}
+                            No address
+                            {% else %}
+                            <ul> <li> {{entity.address.city}} {{entity.address.street}}
+                                {{entity.address.houseNo}} {{entity.address.flatNo}}
+                                <a href="{{ path('_edit', { 'id':entity.id }) }}">Change</a>
+                            </li>
+                            
+                        </ul>
+            {%endif %}
+                </td>
+            </tr>
         </tbody>
     </table>
 

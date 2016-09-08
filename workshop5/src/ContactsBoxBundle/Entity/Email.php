@@ -38,7 +38,7 @@ class Email
     
     /**
      * @ORM\ManyToOne(targetEntity="Person",inversedBy="emails")
-     * @ORM\JoinColumn(name="personId",referencedColumnName="id")
+     * @ORM\JoinColumn(name="person_id",referencedColumnName="id")
      */
     private $person;
 
